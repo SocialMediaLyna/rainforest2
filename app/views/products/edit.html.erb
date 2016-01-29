@@ -1,23 +1,23 @@
-<h1>Edit Picture</h1>
+<h1>Edit Product</h1>
 
 <p>
   <%= link_to "Back", @product %>
 </p>
 
 <%= form_for @product do |f| %>
-  <p>
-    <%= f.label :artist %><br>
-    <%= f.text_field :artist %>
-  </p>
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :url %><br>
-    <%= f.text_field :url %>
-  </p>
-  <p>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :price_in_cents %><br />
+    <%= f.number_field :price_in_cents %>
+  </div>
+  <div class="actions">
     <%= f.submit %>
-  </p>
+  </div>
 <% end %>
