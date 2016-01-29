@@ -1,0 +1,7 @@
+<h1>Products (<%= @products.length %>)</h1>
+<%= link_to "New Picture", "/pictures/new" %>
+
+<% @product.each do |product| %>
+  <p><%= product.title %>, <%= product.artist %></p>
+  <%= link_to image_tag(product.url), "/product/#{product.id}" %>
+<% end %>
