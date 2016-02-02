@@ -1,3 +1,24 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #000;
+
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+  border-style: solid;
+  border-color: red;
+}
+
+html, body, ul, ol {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font: 150% Helvetica, sans-serif;
+  background-color: #F1FDFC;
+}
