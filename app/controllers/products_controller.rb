@@ -1,10 +1,12 @@
 class ProductsController < ApplicationController
+  before_action :load_product, only: [:show, :edit, :update, :destroy]
+
   def index
     @products = Product.all
   end
 
   def show
-    @product = Product.find(params[:id])
+    @product = Product.new
 
   if current_user
     @review = @product.reviews.build
@@ -16,7 +18,6 @@ end
   end
 
   def edit
-    @product = Product.find(params[:id])
   end
 
   def create
@@ -30,8 +31,6 @@ end
   end
 
   def update
-    @product = Product.find(params[:id])
-
     if @product.update_attributes(product_params)
       redirect_to product_path(@product)
     else
@@ -48,5 +47,9 @@ end
   private
   def product_params
     params.require(:product).permit(:name, :description, :price_in_cents)
+  end
+
+  def load_product
+    @product = Product.find(params[:id])
   end
 end
